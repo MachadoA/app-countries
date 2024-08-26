@@ -11,11 +11,17 @@ export default function Mode() {
         if (!typeMode) {
             document.body.classList.add('dark-mode');
             document.querySelector('header').classList.add('darkMode');
-            console.log(document.querySelector('header').classList); 
+            document.querySelectorAll('article').forEach(article => {
+                article.classList.add('darkMode');
+            });
+
         } else {
             document.body.classList.remove('dark-mode');
             document.querySelector('header').classList.remove('darkMode');
-            console.log(document.querySelector('header').classList); 
+            document.querySelectorAll('article').forEach(article => {
+                article.classList.remove('darkMode');
+            });
+
         }
     }
 

@@ -32,3 +32,13 @@ body.dark-mode{
   background-color: var(--color-very-dark-blue-background);
   color: var(--color-white);
 }
+
+header.darkMode{
+  background-color: var(--color-dark-blue);
+  color: var(--color-white);
+}
+
+article.darkMode{
+  background-color: var(--color-dark-blue);
+  color: var(--color-white);
+}
