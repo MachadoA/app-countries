@@ -1,0 +1,22 @@
+.btnHeader{
+    background-color: inherit;
+    color: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+h1{ font-size: 16px; font-weight: 600;}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    padding: 0 15px;
+    background-color: var(--color-white);
+    color: var(--color-very-dark-blue-text);
+}
+
+.darkMode {
+    background-color: var(--color-dark-blue) !important;
+    color: var(--color-white) !important;
+}
