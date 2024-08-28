@@ -1,7 +1,8 @@
 import Header from './components/header/Header';
+import Nav from './components/page/Nav';
+import Main from './components/page/Main';
 
 import './App.css';
-import Countries from './components/element/Countries';
 
 function App() {
 
@@ -9,7 +10,8 @@ function App() {
   return (
     <>
       <Header />
-      <Countries />
+      <Nav />
+      <Main />
     </>
   )
 }

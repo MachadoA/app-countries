@@ -1,0 +1,15 @@
+.nav{
+    max-width: 360px;
+    width: 100%;
+    margin: auto;
+    outline: 1px solid pink;
+}
+
+@media (min-width: 768px){
+    .nav{
+        max-width: 1400px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}

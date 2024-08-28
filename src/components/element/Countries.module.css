@@ -5,10 +5,13 @@
     border-radius: 8px;
     width: 320px;
     height: 410px;
+    cursor: pointer;
 }
 .article img{
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+    width: 320px;
+    height: 215px;
 }
 
 h2{
