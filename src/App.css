@@ -33,12 +33,15 @@ body.dark-mode{
   color: var(--color-white);
 }
 
-header.darkMode{
+header.darkMode,
+article.darkMode,
+aside.darkMode,
+select.darkMode{
   background-color: var(--color-dark-blue);
   color: var(--color-white);
 }
 
-article.darkMode{
+select.darkMode .inputSearch{
   background-color: var(--color-dark-blue);
   color: var(--color-white);
 }

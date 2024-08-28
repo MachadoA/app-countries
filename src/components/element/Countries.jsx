@@ -1,10 +1,10 @@
 import styles from './Countries.module.css';
 
-export default function Countries({name, flag, population, region, capital}) {
+export default function Countries({name, flags, population, region, capital}) {
 return (
   <>
     <article className={styles.article}>
-        <img className={styles.flag} src={flag} alt={`flag of ${name}`} />
+        <img className={styles.flag} src={flags} alt={`flag of ${name}`} />
         <div className={styles.text}>
           <h2>{name}</h2>
           <p><span>Population:</span> {population}</p>

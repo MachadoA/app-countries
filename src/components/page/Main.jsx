@@ -1,19 +1,22 @@
 import Countries from '../element/Countries';
-import data from '../../data.json';
+import { useContext } from 'react';
+import { DataContext } from '../../context/DataContext';
+
 import styles from './Main.module.css';
 
-export default function Main() {
+export default function Main({data}) {
+    const { filteredData } = useContext(DataContext);
 
   return (
     <main>
         <section className={styles.sectionMain}>
-            {data.map((item) => {
-                const { name, flag, population, region, capital} = item;
+            {filteredData.map((item) => {
+                const { name, flags, population, region, capital} = item;
                 return (
                     <Countries 
                         key={name}
                         name={name}
-                        flag={flag}
+                        flags={flags.png}
                         population={population}
                         region={region}
                         capital={capital}

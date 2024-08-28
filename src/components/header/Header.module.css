@@ -10,7 +10,7 @@ h1{ font-size: 16px; font-weight: 600;}
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 100px;
+    height: 85px;
     padding: 0 15px;
     background-color: var(--color-white);
     color: var(--color-very-dark-blue-text);
