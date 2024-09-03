@@ -21,6 +21,7 @@
 .details img{
     display: flex;
     margin: auto;
+    width: 360px;
 }
 
 article p{
@@ -43,21 +44,39 @@ h3{ font-weight: 600; padding-bottom: 20px;}
     border-radius: 5px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 2px 3px 0px;
     background-color: var(--color-white);
+    margin: 5px;
 }
 
 @media (min-width: 768px){
     .container{
         max-width: 1200px;
-        /* outline: 1px solid green; */
     }
     .details{
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         align-items: center;
-        justify-content: space-between;
-        /* outline: 1px solid black; */
+        gap: 10px;
     }
     .details img{
         display: block;
         margin: 0;
+        max-width: 540px;
+        width: 100%;
+    }
+    .column{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding-bottom: 20px;
+    }
+    .secondInformation{
+        padding: 0;
+    }
+    .informationBorders{
+        display: flex;
+        align-items: center;
+    }
+    h3{
+        padding-bottom: 0;
     }
 }

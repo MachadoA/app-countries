@@ -6,11 +6,11 @@ export default function Filter() {
   const [selectedRegion, setSelectedRegion] = useState("");
   const { filterData } = useContext(DataContext);
 
-  function handleChange(event) {
-    const region = event.target.value;
+  function handleChange(e) {
+    const region = e.target.value;
     setSelectedRegion(region);
     filterData(region);
-    console.log("selected region:", event.target.value);
+    console.log("selected region:", e.target.value);
   }
 
   return (
