@@ -14,7 +14,7 @@ export default function Filter() {
   }
 
   return (
-    <div className={styles.filter}>
+    <div className={styles.filter} id='filter'>
       <label htmlFor='region' style={{  display:'none' }}>Filter by Region</label>
       <select name="region" id='region' aria-label="Select your region" value={selectedRegion} onChange={handleChange} className={styles.selectFilter}>
         <option value="">Filter by Region</option>

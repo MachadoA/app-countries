@@ -26,7 +26,7 @@ export default function Search() {
   }
 
   return (
-    <div className={styles.search}>
+    <div className={styles.search} id="search">
       <IoIosSearch />
       <input 
         type="search"

@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
 import { createContext } from "react";
+import { useEffect, useState } from "react";
 import dataJson from "../data.json";
 
 export const DataContext = createContext();
@@ -15,25 +15,20 @@ export function DataProvider({children}){
     },[]);
 
     const filterData = (filterRegion) => {
-       if(filterRegion === ''){
-        setFilteredData(data);
-       } else {
-        const result = data.filter(item => item.region.toLowerCase() === filterRegion.toLowerCase())
-        setFilteredData(result);
-       }
-    }
-
-    const filterCountry = (filterPlace) =>{
-        if(filterPlace === ''){
-            setFilteredData(data);
-    }else {
-        const result = data.filter(item => 
-            item.name.toLowerCase().includes(filterPlace.toLowerCase())
+        setFilteredData(
+            filterRegion === ''
+                ? data
+                : data.filter(item => item.region.toLowerCase() === filterRegion.toLowerCase())
         );
-        setFilteredData(result);
-        console.log('result:', result);
-    }
-    }
+    };
+
+    const filterCountry = (filterPlace) => {
+        setFilteredData(
+            filterPlace === ''
+                ? data
+                : data.filter(item => item.name.toLowerCase().includes(filterPlace.toLowerCase()))
+        );
+    };
 
     const countryNames = filteredData.reduce((acc, country) => {
         acc[country.alpha3Code] = country.name;
@@ -41,31 +36,31 @@ export function DataProvider({children}){
     }, {});
 
     useEffect(() => {
-        if (isDarkMode) {
-            document.body.classList.add('dark-mode');
-            document.querySelector('header')?.classList.add('darkMode');
-            document.querySelector('select')?.classList.add('darkMode');
-            document.querySelector('aside')?.classList.add('darkMode');
-            document.querySelector('input')?.classList.add('darkMode');
-            document.querySelectorAll('article').forEach(article => {
-                article.classList.add('darkMode');
-            });
-            document.querySelectorAll('button').forEach(button => {
-                button.classList.add('darkMode');
-            });
-        } else {
-            document.body.classList.remove('dark-mode');
-            document.querySelector('header')?.classList.remove('darkMode');
-            document.querySelector('select')?.classList.remove('darkMode');
-            document.querySelector('aside')?.classList.remove('darkMode');
-            document.querySelector('input')?.classList.remove('darkMode');
-            document.querySelectorAll('article').forEach(article => {
-                article.classList.remove('darkMode');
-            });
-            document.querySelectorAll('button').forEach(button => {
-                button.classList.remove('darkMode');
-            });
-        }
+        const elementsToUpdate = [
+            { selector: 'body', className: 'dark-mode' },
+            { selector: 'header', className: 'darkMode' },
+            { selector: 'select', className: 'darkMode' },
+            { selector: '#filter', className: 'darkMode' },
+            { selector: '#search', className: 'darkMode' },
+            { selector: 'input', className: 'darkMode' },
+            { selector: 'article', className: 'darkMode' },
+            { selector: 'button', className: 'darkMode' },
+        ];
+
+        elementsToUpdate.forEach(({ selector, className }) => {
+            const element = document.querySelector(selector);
+            if (element) {
+                element.classList.toggle(className, isDarkMode);
+            }
+        });
+
+        document.querySelectorAll('article').forEach(article => {
+            article.classList.toggle('darkMode', isDarkMode);
+        });
+
+        document.querySelectorAll('button').forEach(button => {
+            button.classList.toggle('darkMode', isDarkMode);
+        });
     }, [isDarkMode]);
 
     const toggleTheme = () => {

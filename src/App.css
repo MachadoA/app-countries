@@ -53,3 +53,8 @@ button.darkMode{
   background-color: var(--color-dark-blue);
   color: var(--color-white);
 }
+#search.darkMode,
+#filter.darkMode{
+  background-color: var(--color-dark-blue);
+  color: var(--color-white);
+}

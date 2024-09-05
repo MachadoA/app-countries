@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import Mode from '../features/Mode';
+import Theme from '../features/Theme';
 import styles from './Header.module.css';
 
 export default function Header() {
@@ -8,7 +8,7 @@ export default function Header() {
         <Link to="/">
           <h1>Where in the world?</h1>
         </Link>
-        <Mode />
+        <Theme />
     </header>
   )
 }

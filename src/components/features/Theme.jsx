@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { DataContext } from "../../context/DataContext";
 
 
-export default function Mode() {
+export default function Theme() {
     const {isDarkMode, toggleTheme} = useContext(DataContext);
 
     return (
