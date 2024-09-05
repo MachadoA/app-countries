@@ -8,8 +8,10 @@ export default function Details() {
     const { name } = useParams();
     const { filteredData, countryNames } = useContext(DataContext);
     const navigate = useNavigate();
+
     const decodedName = decodeURIComponent(name);
     const details = filteredData.find(item => item.name === decodedName );
+    
     if (!details) {
         return <h2>Country not found</h2>;
     }
@@ -53,7 +55,7 @@ export default function Details() {
                                         <Link
                                           key={border}
                                           className={styles.country}
-                                          to={`/details/${countryNames[border]}`}
+                                          to={`/details/${encodeURIComponent(countryNames[border])}`}
                                         >
                                             {countryNames[border] || border}
                                         </Link>

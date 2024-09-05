@@ -35,7 +35,6 @@ export default function Search() {
         value={searchCountry} 
         onChange={handleSearch}
         className={styles.inputSearch}
-        autoComplete="address-country"
       />
     </div>
   );
