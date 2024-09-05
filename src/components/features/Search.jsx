@@ -26,7 +26,7 @@ export default function Search() {
   }
 
   return (
-    <aside className={styles.search}>
+    <div className={styles.search}>
       <IoIosSearch />
       <input 
         type="search"
@@ -37,6 +37,6 @@ export default function Search() {
         className={styles.inputSearch}
         autoComplete="address-country"
       />
-    </aside>
+    </div>
   );
 }
