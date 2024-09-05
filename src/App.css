@@ -27,6 +27,9 @@ body{
   background-color: var(--color-very-light-gray);
   color: var(--color-dark-blue);
 }
+button{
+  cursor: pointer;
+}
 
 body.dark-mode{
   background-color: var(--color-very-dark-blue-background);

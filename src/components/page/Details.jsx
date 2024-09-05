@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { FaArrowLeft } from "react-icons/fa6";
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { DataContext } from '../../context/DataContext';
 import styles from './Details.module.css';
 
@@ -9,18 +9,16 @@ export default function Details() {
     const { filteredData } = useContext(DataContext);
     const navigate = useNavigate();
 
-    const country = filteredData.find(item => item.name === name);
-    if (!country) {
+    const details = filteredData.find(item => item.name === name);
+    if (!details) {
         return <h2>Country not found</h2>;
     }
 
-    const { name: countryName, nativeName, flags, population, region, capital, subregion, topLevelDomain, currencies, languages, borders } = country;
+    const { name: countryName, nativeName, flags, population, region, capital, subregion, topLevelDomain, currencies, languages, borders } = details;
 
     function goBack() {
         navigate(-1);
     }
-
-    const threeBorders = borders.slice(0, 3);
 
     return (
         <div className={styles.container}>
@@ -48,11 +46,11 @@ export default function Details() {
                     </div>
                     <article className={styles.informationBorders}>
                         <h3>Border Countries:</h3>
-                        {threeBorders.length > 0 ? (
-                            threeBorders.map(border => (
-                                <button key={border} className={styles.country}>
+                        {borders && borders.length > 0 ? (
+                            borders.map(border => (
+                                <Link key={border} className={styles.country} to={`/details/${countryName}`}>
                                     {border}
-                                </button>
+                                </Link>
                             ))
                         ) : (
                             <p>No border countries available</p>

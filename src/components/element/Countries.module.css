@@ -4,7 +4,7 @@
     color: var(--color-very-dark-blue-text);
     border-radius: 8px;
     width: 260px;
-    height: 335px;
+    height: 360px;
     cursor: pointer;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }

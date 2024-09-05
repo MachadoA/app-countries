@@ -5,7 +5,7 @@ export default function Countries({name, flags, population, region, capital}) {
 return (
   <>
     <article className={styles.article}>
-        <Link to={`/country/${name}`}>
+        <Link to={`/details/${name}`}>
           <img className={styles.flag} src={flags} alt={`flag of ${name}`} />
           <div className={styles.text}>
             <h2>{name}</h2>

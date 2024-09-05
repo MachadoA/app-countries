@@ -8,14 +8,14 @@ import Details from './Details';
 
 function Layout() {
     const location = useLocation();
-    const isDetailsPage = location.pathname.startsWith('/country/');
+    const isDetailsPage = location.pathname.startsWith('/details/');
 
     return (
         <>
             {!isDetailsPage && <Nav />}
             <Routes>
                 <Route path="/" element={<Main data={data} />} />
-                <Route path="/country/:name" element={<Details />} />
+                <Route path="/details/:name" element={<Details />} />
             </Routes>
         </>
     );
