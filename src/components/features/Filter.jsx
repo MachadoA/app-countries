@@ -16,7 +16,7 @@ export default function Filter() {
   return (
     <div className={styles.filter}>
       <label htmlFor='region' style={{  display:'none' }}>Filter by Region</label>
-      <select name="region" value={selectedRegion} onChange={handleChange} className={styles.selectFilter}>
+      <select name="region" id='region' value={selectedRegion} onChange={handleChange} className={styles.selectFilter}>
         <option value="">Filter by Region</option>
         <option value="africa">Africa</option>
         <option value="americas">Americas</option>

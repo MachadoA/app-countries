@@ -37,7 +37,7 @@ body.dark-mode{
 }
 
 header.darkMode,
-.article.darkMode,
+article.darkMode,
 aside.darkMode,
 select.darkMode,
 input.darkMode{

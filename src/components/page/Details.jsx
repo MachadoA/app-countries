@@ -31,35 +31,39 @@ export default function Details() {
                 <div className={styles.description}>
                     <h2>{countryName}</h2>
                     <div className={styles.column}>
-                        <article>
+                        <div>
                             <p><span>Native Name:</span> {nativeName}</p>
                             <p><span>Population:</span> {population}</p>
                             <p><span>Region:</span> {region}</p>
                             <p><span>Sub Region:</span> {subregion}</p>
                             <p><span>Capital:</span> {capital}</p>
-                        </article>
-                        <article className={styles.secondInformation}>
+                        </div>
+                        <div className={styles.secondInformation}>
                             <p><span>Top Level Domain:</span> {topLevelDomain}</p>
                             <p><span>Currencies:</span> {currencies.map(currency => currency.name).join(', ')}</p>
                             <p><span>Languages:</span> {languages.map(language => language.name).join(', ')}</p>
-                        </article>
+                        </div>
                     </div>
-                    <article className={styles.informationBorders}>
+                    <div className={styles.informationBorders}>
                         <h3>Border Countries:</h3>
-                        {borders && borders.length > 0 ? (
-                            borders.map(border => (
-                                <Link 
-                                  key={border} 
-                                  className={styles.country} 
-                                  to={`/details/${countryNames[border]}`}
-                                >
-                                    {countryNames[border] || border}
-                                </Link>
-                            ))
-                        ) : (
-                            <p>No border countries available</p>
-                        )}
-                    </article>
+                        <div className={styles.listGrid}>
+                            {borders && borders.length > 0 ? (
+                                borders.map(border => (
+                                    <button className={styles.borderCountry} key={border}>
+                                        <Link
+                                          key={border}
+                                          className={styles.country}
+                                          to={`/details/${countryNames[border]}`}
+                                        >
+                                            {countryNames[border] || border}
+                                        </Link>
+                                    </button>
+                                ))
+                            ) : (
+                                <p>No border countries available</p>
+                            )}
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>

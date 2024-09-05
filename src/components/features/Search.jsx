@@ -29,11 +29,13 @@ export default function Search() {
     <aside className={styles.search}>
       <IoIosSearch />
       <input 
-        type="search" 
+        type="search"
+        id="search" 
         placeholder="Search for a country..." 
         value={searchCountry} 
         onChange={handleSearch}
         className={styles.inputSearch}
+        autoComplete="address-country"
       />
     </aside>
   );

@@ -1,10 +1,13 @@
+import { Link } from 'react-router-dom';
 import Mode from '../features/Mode';
 import styles from './Header.module.css';
 
 export default function Header() {
   return (
     <header className={styles.header}>
-        <h1>Where in the world?</h1>
+        <Link to="/">
+          <h1>Where in the world?</h1>
+        </Link>
         <Mode />
     </header>
   )
