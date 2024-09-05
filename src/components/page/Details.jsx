@@ -6,10 +6,10 @@ import styles from './Details.module.css';
 
 export default function Details() {
     const { name } = useParams();
-    const { filteredData } = useContext(DataContext);
+    const { filteredData, countryNames } = useContext(DataContext);
     const navigate = useNavigate();
-
-    const details = filteredData.find(item => item.name === name);
+    const decodedName = decodeURIComponent(name);
+    const details = filteredData.find(item => item.name === decodedName );
     if (!details) {
         return <h2>Country not found</h2>;
     }
@@ -48,8 +48,12 @@ export default function Details() {
                         <h3>Border Countries:</h3>
                         {borders && borders.length > 0 ? (
                             borders.map(border => (
-                                <Link key={border} className={styles.country} to={`/details/${countryName}`}>
-                                    {border}
+                                <Link 
+                                  key={border} 
+                                  className={styles.country} 
+                                  to={`/details/${countryNames[border]}`}
+                                >
+                                    {countryNames[border] || border}
                                 </Link>
                             ))
                         ) : (

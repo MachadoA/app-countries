@@ -8,6 +8,7 @@
 @media (min-width: 768px){
     .nav{
         max-width: 1300px;
+        width: 95%;
         display: flex;
         align-items: center;
         justify-content: space-between;

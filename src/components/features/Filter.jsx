@@ -14,13 +14,16 @@ export default function Filter() {
   }
 
   return (
-    <select name="region" value={selectedRegion} onChange={handleChange} className={styles.filter}>
-      <option value="">Filter by Region</option>
-      <option value="africa">Africa</option>
-      <option value="americas">Americas</option>
-      <option value="asia">Asia</option>
-      <option value="europe">Europe</option>
-      <option value="oceania">Oceania</option>
-    </select>
+    <div className={styles.filter}>
+      <label htmlFor='region' style={{  display:'none' }}>Filter by Region</label>
+      <select name="region" value={selectedRegion} onChange={handleChange} className={styles.selectFilter}>
+        <option value="">Filter by Region</option>
+        <option value="africa">Africa</option>
+        <option value="americas">Americas</option>
+        <option value="asia">Asia</option>
+        <option value="europe">Europe</option>
+        <option value="oceania">Oceania</option>
+      </select>
+    </div>
   )
 }

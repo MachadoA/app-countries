@@ -34,9 +34,15 @@ export function DataProvider({children}){
     }
     }
 
+    const countryNames = filteredData.reduce((acc, country) => {
+        acc[country.alpha3Code] = country.name;
+        return acc;
+        console.log(countryNames)
+    }, {});
+
     return (
         <DataContext.Provider value={{
-            data, filteredData, filterData, filterCountry
+            data, filteredData, filterData, filterCountry, countryNames
         }}>
             {children}
         </DataContext.Provider>
