@@ -36,25 +36,25 @@ body.dark-mode{
   color: var(--color-white);
 }
 
-header.darkMode,
-article.darkMode,
-aside.darkMode,
-select.darkMode,
-input.darkMode{
+body.dark-mode header,
+body.dark-mode article,
+body.dark-mode aside,
+body.dark-mode select,
+body.dark-mode input,
+body.dark-mode button {
   background-color: var(--color-dark-blue);
   color: var(--color-white);
 }
 
-select.darkMode .inputSearch{
+body.dark-mode #search,
+body.dark-mode #filter {
   background-color: var(--color-dark-blue);
   color: var(--color-white);
 }
-button.darkMode{
+
+body.dark-mode select,
+body.dark-mode .inputSearch {
   background-color: var(--color-dark-blue);
   color: var(--color-white);
 }
-#search.darkMode,
-#filter.darkMode{
-  background-color: var(--color-dark-blue);
-  color: var(--color-white);
-}
+

@@ -36,31 +36,7 @@ export function DataProvider({children}){
     }, {});
 
     useEffect(() => {
-        const elementsToUpdate = [
-            { selector: 'body', className: 'dark-mode' },
-            { selector: 'header', className: 'darkMode' },
-            { selector: 'select', className: 'darkMode' },
-            { selector: '#filter', className: 'darkMode' },
-            { selector: '#search', className: 'darkMode' },
-            { selector: 'input', className: 'darkMode' },
-            { selector: 'article', className: 'darkMode' },
-            { selector: 'button', className: 'darkMode' },
-        ];
-
-        elementsToUpdate.forEach(({ selector, className }) => {
-            const element = document.querySelector(selector);
-            if (element) {
-                element.classList.toggle(className, isDarkMode);
-            }
-        });
-
-        document.querySelectorAll('article').forEach(article => {
-            article.classList.toggle('darkMode', isDarkMode);
-        });
-
-        document.querySelectorAll('button').forEach(button => {
-            button.classList.toggle('darkMode', isDarkMode);
-        });
+        document.body.classList.toggle('dark-mode', isDarkMode);
     }, [isDarkMode]);
 
     const toggleTheme = () => {

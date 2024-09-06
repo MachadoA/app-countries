@@ -7,22 +7,17 @@ export default function Search() {
   const [searchCountry, setSearchCountry] = useState("");
   const { filterCountry } = useContext(DataContext);
 
-  const previousSearchCountry = useRef("");
+  const debounceTimerRef = useRef(null);
 
   useEffect(() => {
-    const debounceTimer = setTimeout(() => {
-      if (previousSearchCountry.current !== searchCountry.trim()) {
-        previousSearchCountry.current = searchCountry.trim(); 
-        filterCountry(searchCountry.trim()); 
-      }
-    }, 300); 
-
-    return () => clearTimeout(debounceTimer); 
+    debounceTimerRef.current = setTimeout(() => {
+      filterCountry(searchCountry.trim());
+    }, 300);
+    return () => clearTimeout(debounceTimerRef.current);
   }, [searchCountry, filterCountry]);
 
   function handleSearch(e) {
     setSearchCountry(e.target.value);
-    console.log(e.target.value);
   }
 
   return (
@@ -30,7 +25,6 @@ export default function Search() {
       <IoIosSearch />
       <input 
         type="search"
-        id="search" 
         placeholder="Search for a country..." 
         value={searchCountry} 
         onChange={handleSearch}

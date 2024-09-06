@@ -1,15 +1,20 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { DataContext } from '../../context/DataContext';
 import Header from '../header/Header';
 
 function Layout({ children }) {
   const { isDarkMode } = useContext(DataContext);
 
+  useEffect(() => {
+    const body = document.body;
+    body.classList.toggle('dark-mode', isDarkMode);
+  }, [isDarkMode]);
+
   return (
-    <div className={isDarkMode ? 'dark-mode' : ''}>
+    <>
       <Header />
       {children}
-    </div>
+    </>
   );
 }
 

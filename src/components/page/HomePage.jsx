@@ -1,13 +1,11 @@
-import Header from '../header/Header';
+import Filters from '../features/Filters';
 import Main from './Main';
-import Nav from './Nav';
 
 
 export default function HomePage() {
   return (
     <>
-        {/* <Header /> */}
-        <Nav />
+        <Filters />
         <Main />
     </>
   )
